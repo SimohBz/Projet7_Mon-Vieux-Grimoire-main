@@ -5,15 +5,15 @@ const app = express();
 const userRoutes = require("./routes/user");
 const bookRoutes = require("./routes/book");
 const path = require("path");
-
+const fs = require("fs");
 const cors = require("cors");
 const mongoSanitize = require("express-mongo-sanitize");
 const helmet = require("helmet");
 
 const dotEnv = require("dotenv").config({ path: "./.env" });
-const username = process.env.DB_USERNAME;
-const password = process.env.DB_PASSWORD;
-const cluster = process.env.DB_CLUSTER;
+const username = process.env.USERNAME;
+const password = process.env.PASSWORD;
+const cluster = process.env.CLUSTER;
 if (dotEnv.error) {
   console.error(dotEnv.error);
 }
@@ -55,6 +55,11 @@ app.use(
     crossOriginEmbedderPolicy: { policy: "require-corp" },
   })
 );
+
+// Création dossier "images" s'il n'existe pas
+if (!fs.existsSync("images")) {
+  fs.mkdirSync("images");
+}
 
 // Définition des routes de l'API
 app.use("/api/auth", userRoutes);
