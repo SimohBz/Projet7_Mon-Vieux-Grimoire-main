@@ -7,4 +7,4 @@
 4 - Dans le terminal ouvert au niveau du Front-end tapez "npm start" pour lancer l'application.
 
 -----------------------------------------------------------------------------------------------------
-NB - Dans le fichier "app.js" du dossier Back-end, à la ligne 23, les valeurs des variables d'environnement sont récupérées dans le fichier ".env" que j'ai retiré du dossier ".gitignore" exprès pour l'exercice de l'évaluation.
+NB - Dans le fichier "app.js" du dossier Back-end, à la ligne 23, les valeurs des variables d'environnement sont récupérées dans le fichier ".env" que j'ai retiré du dossier ".gitignore" exprès pour les besoins de l'exercice.
